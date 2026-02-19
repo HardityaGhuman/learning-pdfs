@@ -36,10 +36,13 @@ learning_pdf/
 
 ![GAN PDF](outputs/gan_pdf.png)
 
-## GAN Architecture
+## Observations
 
-Generator: Linear(1,32) -> Tanh -> Linear(32,32) -> Tanh -> Linear(32,1)  
-Discriminator: Linear(1,32) -> LeakyReLU -> Linear(32,32) -> LeakyReLU -> Linear(32,1) -> Sigmoid  
-Loss: Binary Cross Entropy  
-Optimizer: Adam (lr=5e-4)  
-Epochs: 3000, Batch size: 256
+### Mode Coverage
+The generator learns the overall right skewed shape and correctly captures the main peak around z = 10–15. However, smaller bumps in the real data are smoothed out. The tail is slightly underrepresented, showing incomplete coverage of rare high values.
+
+### Training Stability
+Training was unstable in the early epochs. Around epoch 1000, the losses stabilized with no divergence observed. This indicates the model eventually reached a steady training phase.
+
+### Quality of Generated Distribution
+Generated samples fall in the expected range and follow the general skew of the real data. The main trend is captured, but fine details are not perfectly matched so there is scope for improvement.
