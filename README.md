@@ -1,4 +1,4 @@
-# Assignment 2 - PDF Learning using GAN
+# Assignment - PDF Learning using GAN
 
 Roll Number: 102303230  
 a_r = 0.5, b_r = 0.3
